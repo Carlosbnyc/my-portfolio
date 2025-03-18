@@ -7,6 +7,7 @@ import Contact from "./Contact/Contact";
 import AboutMe from "./AboutMe/AboutMe";
 import Education from "./Education/Education";
 import FinraLicenses from "../components/FINRALicenses/FinraLicenses";
+import Bio from "./Bio/Bio";
 
 const Home: React.FC = () => {
   return (
@@ -21,6 +22,9 @@ const Home: React.FC = () => {
 
       {/* About Me Section */}
       <AboutMe />
+
+       {/* Bio Section */}
+       <Bio />
 
       {/* Skills Section */}
       <Skills />
