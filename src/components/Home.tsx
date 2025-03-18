@@ -5,6 +5,7 @@ import Projects from "./Projects/Projects";
 import Skills from "./Skills/Skills";
 import Contact from "./Contact/Contact";
 import AboutMe from "./AboutMe/AboutMe";
+import Education from "./Education/Education";
 
 const Home: React.FC = () => {
   return (
@@ -28,6 +29,9 @@ const Home: React.FC = () => {
 
       {/* Projects Section */}
       <Projects />
+
+      {/* Education Section */}
+      <Education />
 
       {/* Contact Section */}
       <Contact />
