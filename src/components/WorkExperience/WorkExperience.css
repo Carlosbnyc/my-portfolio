@@ -1,0 +1,63 @@
+/* WorkExperience.css - Styles for Work Experience Component */
+
+.work-experience {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #2b2d42;
+    margin-bottom: 20px;
+  }
+  
+  .timeline {
+    position: relative;
+    padding: 20px;
+    border-left: 3px solid #ef233c;
+  }
+  
+  .timeline-item {
+    margin-bottom: 30px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background: #ef233c;
+    border-radius: 50%;
+  }
+  
+  .timeline-content {
+    background: #edf2f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h3 {
+    margin: 0;
+    color: #2b2d42;
+  }
+  
+  h4 {
+    margin: 5px 0;
+    color: #8d99ae;
+  }
+  
+  ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  li {
+    color: #2b2d42;
+  }
+  
