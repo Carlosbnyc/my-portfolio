@@ -1,0 +1,53 @@
+/* FinraLicenses.css - Styles for the FINRA Licenses Component */
+
+.finra-licenses-section {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+    background: #edf2f4;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: #2b2d42;
+    margin-bottom: 20px;
+  }
+  
+  .licenses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .license-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  h3 {
+    margin: 0;
+    color: #2b2d42;
+    font-size: 1.2rem;
+  }
+  
+  p {
+    color: #4a4e69;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 5px 0;
+  }
+  
+  .finra-licenses-section a {
+    color: #ef233c;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .finra-licenses-section a:hover {
+    text-decoration: underline;
+  }
