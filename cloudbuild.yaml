@@ -7,3 +7,6 @@ steps:
 
 - name: "gcr.io/firebase-ci"
   args: ["deploy", "--project=carlosnycportfolio"]
+
+options:
+  logging: CLOUD_LOGGING_ONLY  # Ensure logs go to Google Cloud Logging
