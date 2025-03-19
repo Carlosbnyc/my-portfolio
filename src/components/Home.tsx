@@ -8,44 +8,41 @@ import AboutMe from "./AboutMe/AboutMe";
 import Education from "./Education/Education";
 import FinraLicenses from "../components/FINRALicenses/FinraLicenses";
 import Bio from "./Bio/Bio";
+import SidebarMenu from "../components/SideBar/SideBar";
+
 
 const Home: React.FC = () => {
   return (
     <div className="home-container">
-      {/* Hero Section */}
-      <section className="hero">
-        <img src="/images/Headshot.jpeg" className="profile-pic" alt="Carlos Bowyer" />
-        <h1 className="title">Carlos Debora-Bowyer</h1>
-        <p className="subtitle">Full Stack Developer | Investments Operations & Compliance Professional</p>
-        <a href="#contact" className="cta-button">Contact Me</a>
-      </section>
-
-      {/* About Me Section */}
-      <AboutMe />
-
-       {/* Bio Section */}
-       <Bio />
-
-      {/* Skills Section */}
-      <Skills />
-
-      {/* Work Experience Section */}
-      <WorkExperience />
-
-      {/* Projects Section */}
-      <Projects />
-
-      {/* Education Section */}
-      <Education />
-
-      {/* Finra Section */}
-      <FinraLicenses />
-
-      {/* Contact Section */}
-      <Contact />
+      <SidebarMenu />
+      <main className="content">
+        <section id="bio">
+          <Bio />
+        </section>
+        <section id="aboutme">
+          <AboutMe />
+        </section>
+        <section id="skills">
+          <Skills />
+        </section>
+        <section id="workexperience">
+          <WorkExperience />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="education">
+          <Education />
+        </section>
+        <section id="finra">
+          <FinraLicenses />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
     </div>
   );
 };
-
 export default Home;
 
