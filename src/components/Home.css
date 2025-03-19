@@ -66,7 +66,7 @@ section {
   max-width: 1000px;
   margin: auto;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.804); /* Transparent glass effect */
+  background: rgba(255, 255, 255, 0.739); /* Transparent glass effect */
   backdrop-filter: blur(20px);
   border-radius: 15px;
   border: 2px solid rgba(255, 255, 255, 0.193); /* Adds a defined border */
@@ -76,7 +76,7 @@ section {
 
 /* Section Hover Effect */
 section:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.642);
   box-shadow: 0px 18px 30px rgba(255, 255, 255, 0.2);
   transform: scale(1.01);
 }
