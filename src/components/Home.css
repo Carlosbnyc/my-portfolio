@@ -19,7 +19,7 @@ body, html {
 }
 
 /* 🔹 Grid Layout for Sections */
-content {
+.content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); /* Make sections wider */
   gap: 40px; /* More spacing between sections */
@@ -39,7 +39,6 @@ section {
   transition: all 0.3s ease-in-out;
   max-width: 1200px; /* Ensure they are wider */
   margin: auto;
-  padding: 40px;
 }
 
 /* 🔹 Section Hover Effect */

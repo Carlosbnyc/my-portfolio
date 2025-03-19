@@ -1,10 +1,9 @@
-/* 🌟 Improved Sidebar for Full Responsiveness */
+/* 🌟 Fully Optimized Sidebar for All Screen Sizes */
 
 .sidebar-menu {
-    position: fixed;
-    left: 20px;
+    position:absolute;
+    left:10px;
     top: 50%;
-    transform: translateY(-50%);
     width: 220px;
     background: rgba(15, 15, 30, 0.9); /* Dark transparency for tech look */
     padding: 25px;
@@ -12,22 +11,84 @@
     box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
     text-align: center;
     backdrop-filter: blur(8px);
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    z-index: 10; /* Keeps sidebar behind content */
+}
+.sidebar-menu.open {
+    left: 0;
 }
 
-/* 📱 Mobile Friendly Sidebar */
+/* Ensure content shifts when sidebar opens */
+.content {
+    transition: margin-left 0.3s ease-in-out;
+}
+.sidebar-toggle {
+    display: none;
+  }
+
+/* 📱 Mobile-Friendly Sidebar */
 @media (max-width: 768px) {
     .sidebar-menu {
-        position: absolute;
-        left: 0;
+        position: fixed;
         top: 0;
+        left: 0;
         width: 100%;
         height: auto;
-        transform: none;
         padding: 15px;
         box-shadow: none;
         border-radius: 0;
-    }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background: rgba(15, 15, 30, 0.95);
+        z-index: 100;
+      }
+
+
+      .sidebar-menu ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 0;
+      }
+      
+      .sidebar-menu li {
+        display: inline-block;
+        padding: 10px;
+        font-size: 1rem;
+      }
+    
+     /* When the sidebar is open, show menu items */
+  .sidebar-menu.open ul {
+    display: flex;
+  }
+
+  .content {
+    margin-left: 0 !important;
+    padding-top: 70px; /* Push content down so the sidebar doesn’t cover it */
+  }
+
+    /* Sidebar Toggle Button */
+    .sidebar-toggle {
+        display: block;
+        position: relative; /* Relative positioning to flow within the flex container */
+        font-size: 2rem;
+        background: linear-gradient(135deg, #00e6ff, #0077b6);
+        border: 2px solid #00e6ff;
+        border-radius: 5px;
+        color: #fff;
+        padding: 8px 12px;
+        cursor: pointer;
+        z-index: 110;
+        box-shadow: 0 0 10px rgba(0, 230, 255, 0.6);
+        transition: transform 0.3s ease-in-out;
+      }
+      .sidebar-toggle:hover {
+        transform: scale(1.1);
+      }
+ 
 }
 
 /* 🔹 Profile Picture - Cyber Glow Effect */
@@ -85,60 +146,10 @@
 }
 
 /* 📱 Mobile Sidebar Adjustments */
-/* 📱 Mobile-Friendly Sidebar */
 @media (max-width: 768px) {
-    .sidebar-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        padding: 15px;
-        box-shadow: none;
-        border-radius: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-        background: rgba(15, 15, 30, 0.95);
-        z-index: 100;
-    }
-
-    /* Hide menu items by default */
-    .sidebar-menu ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 0;
-    }
-
-    /* When the sidebar is open, show menu items */
-    .sidebar-toggle {
-        display: none;
-    }
-
-    /* Sidebar Toggle Button */
-    .sidebar-toggle {
-        background: transparent;
-        border: none;
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-        margin-right: 20px;
-    }
-    @media (max-width: 768px) {
-        .sidebar-toggle {
-            display: block;
-            background: transparent;
-            border: none;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-            margin-right: 20px;
-        }
-    }
-    .profile-section {
-        display: none; /* Hide profile pic on mobile for better space */
+    .sidebar-menu li {
+        display: inline-block;
+        padding: 10px;
+        font-size: 1rem;
     }
 }

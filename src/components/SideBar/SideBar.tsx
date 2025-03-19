@@ -12,14 +12,16 @@ const SidebarMenu: React.FC = () => {
     }
   };
 
+  const toggleSidebar = () => {
+    setIsOpen(prevState => !prevState);
+  };
+
   return (
-    <nav className={`sidebar-menu ${isOpen ? "open" : ""}`}>
+<nav className={`sidebar-menu ${isOpen ? "open" : ""}`}>
       {/* Mobile Toggle Button */}
-      {window.innerWidth < 768 && (
-  <button className="sidebar-toggle" onClick={() => setIsOpen(!isOpen)}>
-    ☰
-  </button>
-)}
+      <button className="sidebar-toggle" onClick={toggleSidebar}>
+        &#9776; {/* Hamburger icon */}
+      </button>
       <div className="profile-section">
         <img src="/images/Headshot.jpeg" alt="Profile Headshot" className="profile-pic" />
       </div>
