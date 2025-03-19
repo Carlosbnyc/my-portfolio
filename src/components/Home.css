@@ -1,4 +1,3 @@
-
 body, html {
   margin: 0;
   padding: 0;
@@ -8,97 +7,126 @@ body, html {
   color: #ffffff;
 }
 
-
-@keyframes backgroundShift {
-  0% { background: linear-gradient(135deg, #0f172a, #1e293b, #334155); }
-  50% { background: linear-gradient(135deg, #081c3f, #09203f, #204eb0); }
-  100% { background: linear-gradient(135deg, #0f172a, #1e293b, #334155); }
+/* 🌟 Main Content Layout */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* 🌟 Particle Background */
-.tsparticles {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background: transparent;
+/* 🔹 Grid Layout for Sections */
+content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); /* Make sections wider */
+  gap: 40px; /* More spacing between sections */
+  width: 90%;
+  max-width: 1300px; /* Make sections take more space */
+  margin: auto;
+  margin-left: 250px; /* Default for desktop */
+    transition: margin-left 0.3s ease-in-out;
+}
+/* 🌟 Make Sections More Dynamic */
+section {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0px 12px 24px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+  max-width: 1200px; /* Ensure they are wider */
+  margin: auto;
+  padding: 40px;
 }
 
-/* 🔹 Sidebar Menu */
+/* 🔹 Section Hover Effect */
+section:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 14px 28px rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+/* 🔹 Ensure Headings Are Consistent */
+h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .content {
+      grid-template-columns: 1fr; /* Full width on mobile */
+      padding: 20px;
+  }
+
+  section {
+      width: 95%; /* Slightly less wide for better readability */
+      padding: 30px;
+  }
+}
+
+/* 🌟 Improved Sidebar for Full Responsiveness */
+
 .sidebar-menu {
-  width: 220px;
   position: fixed;
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(25, 25, 112, 0.7);
-  padding: 20px;
+  width: 220px;
+  background: rgba(15, 15, 30, 0.9); /* Dark transparency for tech look */
+  padding: 25px;
   border-radius: 15px;
-  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
   text-align: center;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease-in-out;
   z-index: 10;
-  transition: all 0.3s ease-in-out;
 }
 
-.sidebar-menu:hover {
-  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2)
-}; /* Soft glow 
+/* 📱 Mobile Friendly Sidebar */
+@media (max-width: 768px) {
+  .sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    box-shadow: none;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background: rgba(15, 15, 30, 0.95);
+    z-index: 100;
 }
-
-/* 🔹 Main Layout */
-.home-container {
-  display: flex;
-  min-height: 100vh;
-  position: relative;
+  .sidebar-menu ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+  }
+  .sidebar-menu li {
+      display: inline-block;
+      padding: 10px;
+      font-size: 1rem;
+  }
+  .profile-section {
+      display: none; /* Hide profile pic on small screens */
+  }
+  .sidebar-menu.open ul {
+    display: flex;
 }
-
 .content {
-  flex-grow: 1;
-  margin-left: 250px;
-  padding: 40px;
+  margin-left: 0 !important;
 }
-
-/* 🔹 Sections Styling */
-section {
-  width: 85%;
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.739); /* Transparent glass effect */
-  backdrop-filter: blur(20px);
-  border-radius: 15px;
-  border: 2px solid rgba(255, 255, 255, 0); /* Adds a defined border */
-  box-shadow: 0px 15px 25px rgba(255, 255, 255, 0.1); /* Softer shadow */
-  transition: all 0.3s ease-in-out;
-}
-
-/* Section Hover Effect */
-section:hover {
-  background: rgba(255, 255, 255, 0.642);
-  box-shadow: 0px 18px 30px rgba(255, 255, 255, 0.2);
-  transform: scale(1.01);
-}
-
-/* 🔹 High-Tech Headings */n
-h2 {
-  color: #ffffff;
-  font-size: 2.5rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 20px;
-  text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8); /* Neon glow effect */
-}
-
-/* 🔹 Optional: Underline Effect */
-h2::after {
-  content: "";
-  display: block;
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(90deg, #00d4ff, #0084ff);
-  margin: 10px auto 0;
-  border-radius: 2px;
 }

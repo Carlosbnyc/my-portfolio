@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SideBar.css";
 
 const SidebarMenu: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false); // State for mobile menu toggle
+
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false); // Close menu after clicking on mobile
     }
   };
 
   return (
-    <nav className="sidebar-menu">
+    <nav className={`sidebar-menu ${isOpen ? "open" : ""}`}>
+      {/* Mobile Toggle Button */}
+      {window.innerWidth < 768 && (
+  <button className="sidebar-toggle" onClick={() => setIsOpen(!isOpen)}>
+    ☰
+  </button>
+)}
       <div className="profile-section">
         <img src="/images/Headshot.jpeg" alt="Profile Headshot" className="profile-pic" />
       </div>
+
       <ul>
         <li onClick={() => scrollToSection("bio")}>About Me</li>
         <li onClick={() => scrollToSection("skills")}>Skills</li>

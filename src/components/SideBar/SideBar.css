@@ -85,10 +85,60 @@
 }
 
 /* 📱 Mobile Sidebar Adjustments */
+/* 📱 Mobile-Friendly Sidebar */
 @media (max-width: 768px) {
-    .sidebar-menu li {
-        display: block;
-        padding: 10px;
-        font-size: 1rem;
+    .sidebar-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        box-shadow: none;
+        border-radius: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background: rgba(15, 15, 30, 0.95);
+        z-index: 100;
+    }
+
+    /* Hide menu items by default */
+    .sidebar-menu ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    /* When the sidebar is open, show menu items */
+    .sidebar-toggle {
+        display: none;
+    }
+
+    /* Sidebar Toggle Button */
+    .sidebar-toggle {
+        background: transparent;
+        border: none;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+    @media (max-width: 768px) {
+        .sidebar-toggle {
+            display: block;
+            background: transparent;
+            border: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+    }
+    .profile-section {
+        display: none; /* Hide profile pic on mobile for better space */
     }
 }
