@@ -11,9 +11,9 @@ const Bio: React.FC = () => {
       transition={{ duration: 0.8 }}
     >
       <h2>About Me</h2>
-      <p>
-        <strong>Software Engineer & Fintech Innovator...</strong>
-      </p>
+      <h3>
+        <strong>Software Engineer & Fintech Innovator</strong>
+      </h3>
       <p>
         Based in Williamsburg, Brooklyn, I am a <strong>software engineer and fintech professional</strong> passionate about
         building technology that enhances financial systems and compliance processes. With a strong foundation in 

@@ -43,10 +43,21 @@
   }
   
   .finra-licenses-section a {
-    color: #ef233c;
+    color: #237fef; /* Default link color (blue) */
     font-weight: bold;
     text-decoration: none;
-  }
+    transition: color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* 🔹 Change color after clicking (visited state) */
+.finra-licenses-section a:visited {
+  color: #ef3e23; /* Red after clicking */
+}
+
+/* 🔹 Change color when actively clicking */
+.finra-licenses-section a:active {
+  color: #d90429; /* Slightly darker red when clicked */
+}
   
   .finra-licenses-section a:hover {
     text-decoration: underline;

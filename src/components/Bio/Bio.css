@@ -24,20 +24,46 @@ p {
 
 /* Ensures heading is clear and readable */
 h2 {
-  color: #0e0d0d;
-  font-size: 2.2rem;
+  color: #469fd2;
+  font-size: 2.0rem;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 10px;
   text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+
+h3 {
+  color: #3c5f70; /* Subtle silver-blue for a premium feel */
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.2px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-shadow: 0px 0px 6px rgba(0, 150, 255, 0.3); /* Softer glow effect */
+}
+
+/* 🔹 Subtle Underline Effect */
+h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #1e88e5, #64b5f6);
+  margin: 8px auto 0;
+  border-radius: 2px;
 }
 
 /* Improves paragraph readability */
 p {
+  text-align: center;
   color: #eaeaea;
-  font-size: 1.3rem;
-  font-style: italic;
+  font-size: 1.2rem;
+  font-style: normal;
   line-height: 1.7;
   margin-bottom: 20px;
   transition: color 0.3s ease-in-out;
@@ -54,7 +80,7 @@ p {
   display: flex;
   justify-content: center;
   gap: 30px;
-  font-size: 1.5rem; /* Increase icon size */
+  font-size: 1.3rem; /* Increase icon size */
   margin-top: 25px;
   color: #070606;
 }

@@ -57,3 +57,77 @@
   .project-card a:hover {
     background: #d90429;
   }
+
+  .projects-section h3 {
+    color: #2b4c6f; /* Slightly darker blue */
+    font-size: 1.2rem; 
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 6px rgba(0, 120, 255, 0.3); /* Softer glow */
+  }
+  
+  /* 🔹 Adjusted Underline Effect for Work Experience */
+  .projects-section h3::after {
+    content: "";
+    display: block;
+    width: 80px; /* Make underline slightly wider */
+    height: 3px;
+    background: linear-gradient(90deg, #003366, #0055aa);
+    margin: 10px auto 0;
+    border-radius: 3px;
+    display: none;
+  }
+
+  /* 🔹 High-Tech Buttons for Project Links */
+.projects-section a {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b); /* Cyber gradient */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 20px;
+  margin: 10px 5px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.4); /* Subtle glow */
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🔹 Button Hover Effect */
+.projects-section a:hover {
+  background: linear-gradient(90deg, #ff4b2b, #ff416c);
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px rgba(255, 50, 50, 0.7);
+}
+
+/* 🔹 Add a Pulsing Glow */
+.projects-section a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.2) 10%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.projects-section a:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* 🔹 Adjust Button Text */
+.projects-section a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}

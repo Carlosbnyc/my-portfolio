@@ -25,10 +25,19 @@
   }
   
   .contact-info a {
-    color: #ef233c;
+    color: #237fef;
     text-decoration: none;
     font-weight: bold;
   }
+  /* 🔹 Change color after clicking (visited state) */
+.contact-info a:visited {
+  color: #ef3e23; /* Red after clicking */
+}
+
+/* 🔹 Change color when actively clicking */
+.contact-info a:active {
+  color: #d90429; /* Slightly darker red when clicked */
+}
   
   .contact-info a:hover {
     text-decoration: underline;

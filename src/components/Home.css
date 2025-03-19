@@ -1,18 +1,18 @@
-/* 🌟 High-End Animated Background */
+
 body, html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: radial-gradient(circle at top left, #000428, #004e92, #2b6cb0);
+  background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+  background-attachment: fixed;
   color: #ffffff;
-  height: 100vh;
-  animation: backgroundShift 10s infinite alternate ease-in-out;
 }
 
+
 @keyframes backgroundShift {
-  0% { background: radial-gradient(circle at top left, #000428, #004e92, #2b6cb0); }
-  50% { background: radial-gradient(circle at bottom right, #1e3c72, #2a5298, #6dd5ed); }
-  100% { background: radial-gradient(circle at top left, #081c3f, #09203f, #204eb0); }
+  0% { background: linear-gradient(135deg, #0f172a, #1e293b, #334155); }
+  50% { background: linear-gradient(135deg, #081c3f, #09203f, #204eb0); }
+  100% { background: linear-gradient(135deg, #0f172a, #1e293b, #334155); }
 }
 
 /* 🌟 Particle Background */
@@ -62,31 +62,43 @@ body, html {
 
 /* 🔹 Sections Styling */
 section {
-  width: 85%; /* Same width for all sections */
-  max-width: 1000px; /* Keep it well-sized for larger screens */
+  width: 85%;
+  max-width: 1000px;
   margin: auto;
-  padding: 35px;
-  background: rgba(255, 255, 255, 0.3); /* Increase opacity for readability */
-  backdrop-filter: blur(15px);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1); /* Transparent glass effect */
+  backdrop-filter: blur(20px);
   border-radius: 15px;
-  box-shadow: 0px 12px 24px rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Adds a defined border */
+  box-shadow: 0px 15px 25px rgba(255, 255, 255, 0.1); /* Softer shadow */
   transition: all 0.3s ease-in-out;
 }
 
 /* Section Hover Effect */
 section:hover {
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0px 14px 28px rgba(255, 255, 255, 0.4);
-  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0px 18px 30px rgba(255, 255, 255, 0.2);
+  transform: scale(1.01);
 }
 
-/* 🔹 Section Headings */
+/* 🔹 High-Tech Headings */
 h2 {
   color: #ffffff;
-  font-size: 2.2rem;
-  font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: 900;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+  text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8); /* Neon glow effect */
+}
+
+/* 🔹 Optional: Underline Effect */
+h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #00d4ff, #0084ff);
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
