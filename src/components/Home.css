@@ -43,8 +43,8 @@ body, html {
 }
 
 .sidebar-menu:hover {
-  transform: scale(1.05);
-  background: rgba(25, 25, 112, 0.9);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2)
+}; /* Soft glow 
 }
 
 /* 🔹 Main Layout */

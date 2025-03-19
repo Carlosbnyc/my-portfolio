@@ -5,7 +5,7 @@
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    width: 180px;
+    width: 200px;
     background: #2b2d42;
     padding: 20px;
     border-radius: 12px;
@@ -44,13 +44,15 @@
     padding: 12px;
     margin-bottom: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
-  }
-  
-  .sidebar-menu li:hover {
+    border: 2px solid transparent; /* Reserve space to prevent shifting */
+}
+
+/* Improved Hover Effect */
+.sidebar-menu li:hover {
     background: #ef233c;
-    transform: scale(1.05);
-  }
+    box-shadow: 0px 0px 10px rgba(239, 35, 60, 0.8);
+}
