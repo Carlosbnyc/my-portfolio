@@ -1,18 +1,33 @@
-/* 🌟 High-Tech Sidebar with Neon Effects */
+/* 🌟 Improved Sidebar for Full Responsiveness */
 
 .sidebar-menu {
     position: fixed;
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    width: 240px;
-    background: rgba(15, 15, 30, 0.85); /* Dark, futuristic transparency */
+    width: 220px;
+    background: rgba(15, 15, 30, 0.9); /* Dark transparency for tech look */
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2); /* Neon cyan glow */
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
     text-align: center;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
     transition: all 0.3s ease-in-out;
+}
+
+/* 📱 Mobile Friendly Sidebar */
+@media (max-width: 768px) {
+    .sidebar-menu {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        transform: none;
+        padding: 15px;
+        box-shadow: none;
+        border-radius: 0;
+    }
 }
 
 /* 🔹 Profile Picture - Cyber Glow Effect */
@@ -39,7 +54,7 @@
     box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.8);
 }
 
-/* 🔹 Sidebar Buttons - Cyber-Inspired Hover Effect */
+/* 🔹 Sidebar Buttons - Cyberpunk-Inspired */
 .sidebar-menu ul {
     list-style: none;
     padding: 0;
@@ -62,33 +77,18 @@
     overflow: hidden;
 }
 
-/* 🔹 Cyberpunk Gradient Hover Effect */
-.sidebar-menu li::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: linear-gradient(45deg, #ff00ff, #00e6ff, #ff00ff);
-    transition: all 0.4s ease-in-out;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-}
-
 /* 🔹 Button Hover - Futuristic Glow */
-.sidebar-menu li:hover::before {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.3;
-}
-
 .sidebar-menu li:hover {
     background: rgba(0, 255, 255, 0.2);
     box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
     transform: scale(1.05);
 }
 
-/* 🔹 Sidebar Soft Glow Effect */
-.sidebar-menu:hover {
-    box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.5);
+/* 📱 Mobile Sidebar Adjustments */
+@media (max-width: 768px) {
+    .sidebar-menu li {
+        display: block;
+        padding: 10px;
+        font-size: 1rem;
+    }
 }
