@@ -11,6 +11,9 @@ const SidebarMenu: React.FC = () => {
 
   return (
     <nav className="sidebar-menu">
+      <div className="profile-section">
+        <img src="/images/Headshot.jpeg" alt="Profile Headshot" className="profile-pic" />
+      </div>
       <ul>
         <li onClick={() => scrollToSection("bio")}>About Me</li>
         <li onClick={() => scrollToSection("skills")}>Skills</li>
