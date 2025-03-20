@@ -19,12 +19,12 @@ const SidebarMenu: React.FC = () => {
   return (
 <nav className={`sidebar-menu ${isOpen ? "open" : ""}`}>
       {/* Mobile Toggle Button */}
-      <button className="sidebar-toggle" onClick={toggleSidebar}>
-        &#9776; {/* Hamburger icon */}
-      </button>
       <div className="profile-section">
         <img src="/images/Headshot.jpeg" alt="Profile Headshot" className="profile-pic" />
       </div>
+      <button className="sidebar-toggle" onClick={toggleSidebar}>
+        &#9776; {/* Hamburger icon */}
+      </button>
 
       <ul>
         <li onClick={() => scrollToSection("bio")}>About Me</li>

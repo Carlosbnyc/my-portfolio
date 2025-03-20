@@ -3,46 +3,24 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 70px; /* Default collapsed width */
-  height: 100dvh; /* Full height, optimized for mobile screens */
+  width: 70px; /* Collapsed state width */
+  height: 100dvh; /* Full device height */
   padding: 10px;
   display: flex;
-  flex-direction: column; /* Ensures menu items stack */
+  flex-direction: column;
   align-items: center;
   background: rgba(15, 15, 30, 0.95);
-  box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.3); /* Neon glow effect */
+  box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.3);
   z-index: 100;
   transition: width 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .sidebar-menu.open {
-  width: 250px; /* Expands when open */
+  width: 250px; /* Expanded state width */
   box-shadow: 0px 0px 18px rgba(0, 255, 255, 0.6);
 }
 
-/* 🌟 Sidebar List (Hidden by Default on Mobile) */
-.sidebar-menu ul {
-  display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  padding: 0;
-  left: 10px;
-  top: 80px;
-  transform: translateY(-10px);
-  border-radius: 10px;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  opacity: 0;
-}
-
-/* 🌟 Open Sidebar (Menu Visible) */
-.sidebar-menu.open ul {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 🌟 Sidebar Toggle Button */
+/* Sidebar Toggle Button */
 .sidebar-toggle {
   display: block;
   font-size: 2rem;
@@ -50,32 +28,75 @@
   border: 2px solid #00e6ff;
   border-radius: 8px;
   color: #fff;
-  padding: 12px 16px;
+  padding: 10px;
   cursor: pointer;
   z-index: 110;
-  box-shadow: 0 0 10px rgba(0, 230, 255, 0.6);
+  box-shadow: 0 0 12px rgba(0, 230, 255, 0.5);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .sidebar-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 1);
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.8);
 }
 
-/* 🌟 Profile Picture (Smaller on Mobile) */
+/* Sidebar Menu List: Contained Within Expanded Sidebar */
+.sidebar-menu ul {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%; /* Full width inside the sidebar */
+  padding: 15px 0;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* When Sidebar is Open, Show Menu Items Inside */
+.sidebar-menu.open ul {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Sidebar Menu Items */
+.sidebar-menu li {
+  background: rgba(30, 30, 60, 0.9);
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  width: 90%; /* Ensures items don't overflow the sidebar */
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 8px rgba(0, 255, 255, 0.3);
+  border: 2px solid rgba(0, 255, 255, 0.4);
+}
+
+/* Hover Effect on Menu Items */
+.sidebar-menu li:hover {
+  background: rgba(0, 255, 255, 0.3);
+  box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+/* Profile Section and Picture */
 .profile-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease-in-out;
 }
 
 .profile-pic {
-  width: 100px; /* Reduce for better fit */
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #00e6ff; /* Neon cyan glow */
+  border: 3px solid #00e6ff;
   box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.6);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -85,37 +106,7 @@
   box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
 }
 
-/* 🌟 Sidebar Buttons */
-.sidebar-menu ul {
-  list-style:none;
-  padding: 0;
-  margin: auto;
-}
-
-.sidebar-menu li {
-  background: rgba(30, 30, 60, 0.85);
-  color: #ffffff;
-  font-size: 1rem;
-  padding: 14px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  border-radius: 8px;
-  font-weight: bold;
-  text-align: center;
-  border: 2px solid transparent;
-  position: relative;
-  overflow: hidden;
-}
-
-/* 🌟 Button Glow Hover Effect */
-.sidebar-menu li:hover {
-  background: rgba(0, 255, 255, 0.2);
-  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
-  transform: scale(1.05);
-}
-
-/* 🌟 Desktop Sidebar Overrides */
+/* Desktop Sidebar Overrides */
 @media (min-width: 769px) {
   .sidebar-menu {
       position: fixed;
@@ -123,7 +114,7 @@
       top: 50%;
       width: 220px;
       transform: translateY(-50%);
-      background: rgba(15, 15, 30, 0.9); /* Dark transparency for tech look */
+      background: rgba(15, 15, 30, 0.9);
       padding: 25px;
       border-radius: 15px;
       box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
@@ -137,15 +128,13 @@
   }
 
   .profile-pic {
-      width: 120px; /* Restore larger image */
+      width: 120px;
       height: 120px;
   }
 
   .sidebar-menu ul {
-      display: block; /* Show menu by default */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
   }
-  .sidebar-menu ul {
-    display: flex;
-    flex-direction: column;
-}
 }
