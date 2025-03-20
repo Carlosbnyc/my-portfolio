@@ -13,72 +13,89 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* No forced centering */
-  padding: 30px 1rem;
+  justify-content: flex-start;
+  padding: 20px 1rem;  /* Reduced padding for better spacing */
   max-width: 100%;
   margin: 0 auto;
 }
 
 /* 🌟 Sections: Mobile Defaults */
-.content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  width: 95%;
+.content { 
+  display:flex;
+  flex-direction: column;
+  gap: 15px; /* Reduced gap for better spacing */
+  width: 90%;
+  max-width: 100%; /* Prevents stretching */
   margin: auto;
-  padding-top: 120px;  /* Increased to ensure content is not covered by the top navbar */
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-top: 80px;  /* Adjusted to avoid excessive space */
 }
 
 section {
+  display: block;
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  border-radius: 8px;
   padding: 20px;
-  box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.2);
+  box-shadow: 0px 8px 16px rgba(0, 255, 255, 0.15);
   transition: all 0.3s ease-in-out;
   margin: auto;
-  width: 95%;
+  width: 100%;  /* Ensures it fits within content */
 }
 
 /* 🔹 Section Hover Effect */
 section:hover {
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 12px 24px rgba(0, 255, 255, 0.3);
+  box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.25);
   transform: scale(1.02);
 }
 
 /* 🔹 Headings */
 h2 {
-  font-size: 1.5rem;  /* Default smaller size for mobile */
+  font-size: clamp(1.2rem, 2vw, 1.5rem);  /* Dynamically scales */
   text-align: center;
-  margin-bottom: 20px;
-  text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+  margin-bottom: 15px;
+  text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.7);
 }
 
-/* 📱 Larger Screens: Adjustments */
-@media (min-width: 768px) {
+/* 📱 Tablet Screens (Min: 600px) */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 50px 20px;
+    max-width: 600px;
+}
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  section {
+    margin-bottom: 15px; /* Smaller spacing for mobile */
+  }
+
+}
+
+/* 🖥️ Desktop Screens (Min: 1024px) */
+@media (min-width: 1024px) {
   .home-container {
       padding: 50px 20px;
       max-width: 1200px;
   }
-
   .content {
-      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));  /* Multiple columns */
-      gap: 40px;
-      width: 90%;
-      max-width: 1300px;
-      margin-left: 250px;  /* Desktop left margin for sidebar */
-  }
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    align-items: start;
+}
 
   section {
-      padding: 40px;
-      border-radius: 15px;
+      display:table-row;
+      width: 100%;
+      padding: 30px;
+      border-radius: 20 px;
       box-shadow: 0px 12px 24px rgba(255, 255, 255, 0.2);
   }
 
   h2 {
-      font-size: 2rem;
-  }
+      font-size: clamp(1.5rem, 2vw, 2rem);
+  } 
 }

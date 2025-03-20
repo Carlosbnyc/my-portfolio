@@ -1,22 +1,35 @@
 /* 🌟 Mobile-First Sidebar Styles */
+.sidebar {
+  width: 250px;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000 !important;
+  background: rgba(15, 15, 30, 0.95);
+}
+
+/* Default Sidebar Menu (Mobile-First) */
 .sidebar-menu {
   position: fixed;
   top: 0;
   left: 0;
-  width: 70px; /* Collapsed state width */
-  height: 100dvh; /* Full device height */
+  width: 70px; /* Collapsed by default */
+  height: 100vh;
   padding: 10px;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   align-items: center;
   background: rgba(15, 15, 30, 0.95);
   box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.3);
-  z-index: 100;
   transition: width 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+  z-index: 1001 !important; /* 🔥 Higher than other elements */
 }
 
+/* Sidebar Expanded State */
 .sidebar-menu.open {
-  width: 250px; /* Expanded state width */
+  width: 250px !important;
   box-shadow: 0px 0px 18px rgba(0, 255, 255, 0.6);
 }
 
@@ -35,24 +48,19 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.sidebar-toggle:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 18px rgba(0, 255, 255, 0.8);
-}
-
-/* Sidebar Menu List: Contained Within Expanded Sidebar */
+/* Sidebar Menu Items (Hidden by Default) */
 .sidebar-menu ul {
-  display: none; /* Hidden by default */
+  display: none !important;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%; /* Full width inside the sidebar */
+  width: 100%;
   padding: 15px 0;
-  opacity: 0;
+  opacity: 1 !important;
   transform: translateX(-10px);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* When Sidebar is Open, Show Menu Items Inside */
+/* Sidebar Expanded - Show Menu */
 .sidebar-menu.open ul {
   display: flex;
   opacity: 1;
@@ -62,12 +70,12 @@
 /* Sidebar Menu Items */
 .sidebar-menu li {
   background: rgba(30, 30, 60, 0.9);
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 1rem;
   padding: 14px;
   margin-bottom: 8px;
   cursor: pointer;
-  width: 90%; /* Ensures items don't overflow the sidebar */
+  width: 90%;
   text-align: center;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
@@ -75,14 +83,14 @@
   border: 2px solid rgba(0, 255, 255, 0.4);
 }
 
-/* Hover Effect on Menu Items */
+/* Hover Effect */
 .sidebar-menu li:hover {
   background: rgba(0, 255, 255, 0.3);
   box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.8);
   transform: scale(1.05);
 }
 
-/* Profile Section and Picture */
+/* Profile Section */
 .profile-section {
   display: flex;
   flex-direction: column;
@@ -106,35 +114,74 @@
   box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
 }
 
-/* Desktop Sidebar Overrides */
-@media (min-width: 769px) {
-  .sidebar-menu {
-      position: fixed;
-      left: 10px;
-      top: 50%;
-      width: 220px;
-      transform: translateY(-50%);
-      background: rgba(15, 15, 30, 0.9);
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
-      text-align: center;
-      backdrop-filter: blur(8px);
-      z-index: 10;
+/* 📱 Responsive Adjustments */
+
+/* 🎯 768px (Tablets) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px; /* Shrinks sidebar */
   }
 
+  .sidebar-menu {
+    width: 80px;
+    overflow: hidden;
+    z-index: 2000 !important;
+  }
+
+  .sidebar-menu.open {
+    z-index: 3000 !important;
+  }
   .sidebar-toggle {
-      display: none;
+    z-index: 3100 !important;
   }
 
   .profile-pic {
-      width: 120px;
-      height: 120px;
+    width: 70px;
+    height: 70px;
   }
 
   .sidebar-menu ul {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: none;
+  }
+
+  .sidebar-menu.open ul {
+    display: flex;
+  }
+}
+
+/* 🖥 1024px+ (Desktops) */
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 220px !important; /* Expands for desktop */
+  }
+
+  .sidebar-menu {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    width: 220px !important;
+    transform: translateY(-50%);
+    background: rgba(15, 15, 30, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
+    text-align: center;
+    backdrop-filter: blur(8px);
+    z-index: 2000 !important;
+  }
+
+  .sidebar-toggle {
+    display: none; /* Hide toggle button */
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .sidebar-menu ul {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
   }
 }
