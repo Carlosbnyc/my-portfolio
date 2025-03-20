@@ -1,64 +1,52 @@
-/* FinraLicenses.css - Styles for the FINRA Licenses Component */
-
+/* 🏆 FINRA Licenses Section - Mobile-First */
 .finra-licenses-section {
-    max-width: 800px;
-    margin: auto;
-    padding: 40px 20px;
-    text-align: center;
-    background: #edf2f4;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 255, 255, 0.2);
+}
+
+/* 🔹 Headings */
+.finra-licenses-section h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.6);
+}
+
+/* 🔹 License List */
+.licenses-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* 🔹 License Item */
+.license-item {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0px 4px 8px rgba(0, 255, 255, 0.2);
+}
+
+/* 🔹 Adjustments for Larger Screens */
+@media (min-width: 768px) {
+  .finra-licenses-section {
+      max-width: 900px;
+      padding: 40px 20px;
   }
-  
-  h2 {
-    color: #2b2d42;
-    margin-bottom: 20px;
-  }
-  
+
   .licenses-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
   }
-  
-  .license-item {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  h3 {
-    margin: 0;
-    color: #2b2d42;
-    font-size: 1.2rem;
-  }
-  
-  p {
-    color: #4a4e69;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 5px 0;
-  }
-  
-  .finra-licenses-section a {
-    color: #237fef; /* Default link color (blue) */
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out; /* Smooth transition */
 }
-
-/* 🔹 Change color after clicking (visited state) */
-.finra-licenses-section a:visited {
-  color: #ef3e23; /* Red after clicking */
-}
-
-/* 🔹 Change color when actively clicking */
-.finra-licenses-section a:active {
-  color: #d90429; /* Slightly darker red when clicked */
-}
-  
-  .finra-licenses-section a:hover {
-    text-decoration: underline;
-  }

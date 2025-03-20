@@ -1,155 +1,151 @@
-/* 🌟 Fully Optimized Sidebar for All Screen Sizes */
-
+/* 🌟 Mobile-First Sidebar Styles */
 .sidebar-menu {
-    position:absolute;
-    left:10px;
-    top: 50%;
-    width: 220px;
-    background: rgba(15, 15, 30, 0.9); /* Dark transparency for tech look */
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
-    text-align: center;
-    backdrop-filter: blur(8px);
-    transition: transform 0.3s ease-in-out;
-    z-index: 10; /* Keeps sidebar behind content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px; /* Default collapsed width */
+  height: 100dvh; /* Full height, optimized for mobile screens */
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* Ensures menu items stack */
+  align-items: center;
+  background: rgba(15, 15, 30, 0.95);
+  box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.3); /* Neon glow effect */
+  z-index: 100;
+  transition: width 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
 .sidebar-menu.open {
-    left: 0;
+  width: 250px; /* Expands when open */
+  box-shadow: 0px 0px 18px rgba(0, 255, 255, 0.6);
 }
 
-/* Ensure content shifts when sidebar opens */
-.content {
-    transition: margin-left 0.3s ease-in-out;
+/* 🌟 Sidebar List (Hidden by Default on Mobile) */
+.sidebar-menu ul {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0;
+  left: 10px;
+  top: 80px;
+  transform: translateY(-10px);
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 0;
 }
+
+/* 🌟 Open Sidebar (Menu Visible) */
+.sidebar-menu.open ul {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌟 Sidebar Toggle Button */
 .sidebar-toggle {
-    display: none;
-  }
-
-/* 📱 Mobile-Friendly Sidebar */
-@media (max-width: 768px) {
-    .sidebar-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        padding: 15px;
-        box-shadow: none;
-        border-radius: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-        background: rgba(15, 15, 30, 0.95);
-        z-index: 100;
-      }
-
-
-      .sidebar-menu ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 0;
-      }
-      
-      .sidebar-menu li {
-        display: inline-block;
-        padding: 10px;
-        font-size: 1rem;
-      }
-    
-     /* When the sidebar is open, show menu items */
-  .sidebar-menu.open ul {
-    display: flex;
-  }
-
-  .content {
-    margin-left: 0 !important;
-    padding-top: 70px; /* Push content down so the sidebar doesn’t cover it */
-  }
-
-    /* Sidebar Toggle Button */
-    .sidebar-toggle {
-        display: block;
-        position: relative; /* Relative positioning to flow within the flex container */
-        font-size: 2rem;
-        background: linear-gradient(135deg, #00e6ff, #0077b6);
-        border: 2px solid #00e6ff;
-        border-radius: 5px;
-        color: #fff;
-        padding: 8px 12px;
-        cursor: pointer;
-        z-index: 110;
-        box-shadow: 0 0 10px rgba(0, 230, 255, 0.6);
-        transition: transform 0.3s ease-in-out;
-      }
-      .sidebar-toggle:hover {
-        transform: scale(1.1);
-      }
- 
+  display: block;
+  font-size: 2rem;
+  background: linear-gradient(135deg, #00e6ff, #0077b6);
+  border: 2px solid #00e6ff;
+  border-radius: 8px;
+  color: #fff;
+  padding: 12px 16px;
+  cursor: pointer;
+  z-index: 110;
+  box-shadow: 0 0 10px rgba(0, 230, 255, 0.6);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* 🔹 Profile Picture - Cyber Glow Effect */
+.sidebar-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 1);
+}
+
+/* 🌟 Profile Picture (Smaller on Mobile) */
 .profile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .profile-pic {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #00e6ff; /* Neon cyan glow */
-    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.6);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100px; /* Reduce for better fit */
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00e6ff; /* Neon cyan glow */
+  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.6);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* 🔹 Profile Picture Hover Effect */
 .profile-pic:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.8);
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
 }
 
-/* 🔹 Sidebar Buttons - Cyberpunk-Inspired */
+/* 🌟 Sidebar Buttons */
 .sidebar-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style:none;
+  padding: 0;
+  margin: auto;
 }
 
 .sidebar-menu li {
-    background: rgba(30, 30, 60, 0.85);
-    color: #ffffff;
-    font-size: 1rem;
-    padding: 14px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    border-radius: 8px;
-    font-weight: bold;
-    text-align: center;
-    border: 2px solid transparent;
-    position: relative;
-    overflow: hidden;
+  background: rgba(30, 30, 60, 0.85);
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 14px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
 }
 
-/* 🔹 Button Hover - Futuristic Glow */
+/* 🌟 Button Glow Hover Effect */
 .sidebar-menu li:hover {
-    background: rgba(0, 255, 255, 0.2);
-    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
-    transform: scale(1.05);
+  background: rgba(0, 255, 255, 0.2);
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+  transform: scale(1.05);
 }
 
-/* 📱 Mobile Sidebar Adjustments */
-@media (max-width: 768px) {
-    .sidebar-menu li {
-        display: inline-block;
-        padding: 10px;
-        font-size: 1rem;
-    }
+/* 🌟 Desktop Sidebar Overrides */
+@media (min-width: 769px) {
+  .sidebar-menu {
+      position: fixed;
+      left: 10px;
+      top: 50%;
+      width: 220px;
+      transform: translateY(-50%);
+      background: rgba(15, 15, 30, 0.9); /* Dark transparency for tech look */
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
+      text-align: center;
+      backdrop-filter: blur(8px);
+      z-index: 10;
+  }
+
+  .sidebar-toggle {
+      display: none;
+  }
+
+  .profile-pic {
+      width: 120px; /* Restore larger image */
+      height: 120px;
+  }
+
+  .sidebar-menu ul {
+      display: block; /* Show menu by default */
+  }
+  .sidebar-menu ul {
+    display: flex;
+    flex-direction: column;
+}
 }

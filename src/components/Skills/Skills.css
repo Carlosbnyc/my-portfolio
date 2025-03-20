@@ -1,71 +1,91 @@
-/* Skills.css - Upgraded Skills Section for a High-Tech Look */
-
+/* Skills Section - Mobile-First Approach */
 .skills-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 50px 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
   text-align: center;
 }
 
-/* 🔹 Keep H3 Consistent with Other Sections */
+/* 🔹 Headings - Optimized for Mobile */
 h3 {
   color: #3c5f70;
-  font-size: 1.6rem;
+  font-size: 1.4rem;  /* Smaller for mobile */
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 1.2px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
   text-shadow: 0px 0px 6px rgba(0, 150, 255, 0.3);
 }
 
-/* 🔹 Ensure Grid is Responsive */
+/* 🔹 Mobile-First Skills Grid (Single Column Default) */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Slightly wider cards */
-  gap: 25px;
-  justify-content: center;
-  max-width: 900px;
-  width: 100%;
+  grid-template-columns: 1fr; /* Default to single-column on mobile */
+  gap: 15px;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
 }
 
-/* 🔹 Skill Cards with Glassmorphism & Depth */
+/* 🔹 Skill Cards with Glassmorphism */
 .skill-card {
-  background: rgba(255, 255, 255, 0.15); /* Glass effect */
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 15px;
   text-align: center;
+  font-size: 1rem;
   font-weight: bold;
-  font-size: 1.1rem;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px rgba(0, 255, 255, 0.2);
   cursor: pointer;
 }
 
-/* 🔹 Hover Effect - Subtle Glow Instead of Full Background Change */
+/* 🔹 Hover Effect - Subtle Neon Glow */
 .skill-card:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: scale(1.05);
-  box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.3); /* Subtle neon glow */
+  box-shadow: 0px 8px 16px rgba(0, 255, 255, 0.4);
 }
 
-/* 🔹 Icons Should Stand Out More */
+/* 🔹 Icons - Mobile Default */
 .skill-icon {
-  font-size: 2.2rem; /* Slightly larger icons */
-  margin-bottom: 10px;
+  font-size: 1.8rem; /* Smaller icons for mobile */
+  margin-bottom: 8px;
   transition: transform 0.3s ease-in-out;
 }
 
 /* 🔹 Hover Effect for Icons */
 .skill-card:hover .skill-icon {
-  transform: scale(1.2);
-  color: #00d4ff; /* Neon blue highlight */
+  transform: scale(1.1);
+  color: #00d4ff;
 }
 
-/* 🔹 Make Skill Names More Readable */
-.skill-name {
-  font-weight: bold;
-  font-size: 1.1rem;
+/* 🔹 Adjustments for Larger Screens */
+@media (min-width: 768px) {
+  .skills-section {
+    max-width: 1000px;
+    padding: 50px 20px;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Grid Layout */
+    gap: 25px;
+    max-width: 900px;
+  }
+
+  .skill-card {
+    padding: 20px;
+    font-size: 1.1rem;
+  }
+
+  .skill-icon {
+    font-size: 2.2rem;
+  }
 }

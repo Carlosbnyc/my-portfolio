@@ -1,3 +1,4 @@
+/* 🌟 Global Styles */
 body, html {
   margin: 0;
   padding: 0;
@@ -7,125 +8,77 @@ body, html {
   color: #ffffff;
 }
 
-/* 🌟 Main Content Layout */
+/* 🌟 Mobile-First Layout */
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: auto;
+  justify-content: flex-start; /* No forced centering */
+  padding: 30px 1rem;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-/* 🔹 Grid Layout for Sections */
+/* 🌟 Sections: Mobile Defaults */
 .content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); /* Make sections wider */
-  gap: 40px; /* More spacing between sections */
-  width: 90%;
-  max-width: 1300px; /* Make sections take more space */
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 95%;
   margin: auto;
-  margin-left: 250px; /* Default for desktop */
-    transition: margin-left 0.3s ease-in-out;
+  padding-top: 90px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-/* 🌟 Make Sections More Dynamic */
+
 section {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(15px);
-  border-radius: 15px;
-  padding: 40px;
-  box-shadow: 0px 12px 24px rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.2);
   transition: all 0.3s ease-in-out;
-  max-width: 1200px; /* Ensure they are wider */
   margin: auto;
+  width: 95%;
 }
 
 /* 🔹 Section Hover Effect */
 section:hover {
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 14px 28px rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 12px 24px rgba(0, 255, 255, 0.3);
   transform: scale(1.02);
 }
 
-/* 🔹 Ensure Headings Are Consistent */
+/* 🔹 Headings */
 h2 {
-  color: #ffffff;
-  font-size: 2rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-size: 1.5rem;  /* Default smaller size for mobile */
   text-align: center;
   margin-bottom: 20px;
   text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
 }
 
-@media (max-width: 768px) {
+/* 📱 Larger Screens: Adjustments */
+@media (min-width: 768px) {
+  .home-container {
+      padding: 50px 20px;
+      max-width: 1200px;
+  }
+
   .content {
-      grid-template-columns: 1fr; /* Full width on mobile */
-      padding: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));  /* Multiple columns */
+      gap: 40px;
+      width: 90%;
+      max-width: 1300px;
+      margin-left: 250px;  /* Desktop left margin for sidebar */
   }
 
   section {
-      width: 95%; /* Slightly less wide for better readability */
-      padding: 30px;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 12px 24px rgba(255, 255, 255, 0.2);
   }
-}
 
-/* 🌟 Improved Sidebar for Full Responsiveness */
-
-.sidebar-menu {
-  position: fixed;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 220px;
-  background: rgba(15, 15, 30, 0.9); /* Dark transparency for tech look */
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
-  text-align: center;
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease-in-out;
-  z-index: 10;
-}
-
-/* 📱 Mobile Friendly Sidebar */
-@media (max-width: 768px) {
-  .sidebar-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    padding: 15px;
-    box-shadow: none;
-    border-radius: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    background: rgba(15, 15, 30, 0.95);
-    z-index: 100;
-}
-  .sidebar-menu ul {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 0;
+  h2 {
+      font-size: 2rem;
   }
-  .sidebar-menu li {
-      display: inline-block;
-      padding: 10px;
-      font-size: 1rem;
-  }
-  .profile-section {
-      display: none; /* Hide profile pic on small screens */
-  }
-  .sidebar-menu.open ul {
-    display: flex;
-}
-.content {
-  margin-left: 0 !important;
-}
 }
