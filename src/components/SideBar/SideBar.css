@@ -1,117 +1,337 @@
-/* 🌟 Mobile-First Sidebar Styles */
-.sidebar {
-  width: 250px;
+
+/* 🍔 Neon Burger Menu Button */
+.bm-burger-button {
   position: fixed;
-  height: 100vh;
-  left: 0;
-  top: 0;
-  transition: transform 0.3s ease-in-out;
-  z-index: 1000 !important;
-  background: rgba(15, 15, 30, 0.95);
-}
-
-/* Default Sidebar Menu (Mobile-First) */
-.sidebar-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 70px; /* Collapsed by default */
-  height: 100vh;
-  padding: 10px;
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(15, 15, 30, 0.95);
-  box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.3);
-  transition: width 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
-  z-index: 1001 !important; /* 🔥 Higher than other elements */
-}
-
-/* Sidebar Expanded State */
-.sidebar-menu.open {
-  width: 250px !important;
-  box-shadow: 0px 0px 18px rgba(0, 255, 255, 0.6);
-}
-
-/* Sidebar Toggle Button */
-.sidebar-toggle {
-  display: block;
-  font-size: 2rem;
-  background: linear-gradient(135deg, #00e6ff, #0077b6);
-  border: 2px solid #00e6ff;
-  border-radius: 8px;
-  color: #fff;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 110;
-  box-shadow: 0 0 12px rgba(0, 230, 255, 0.5);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Sidebar Menu Items (Hidden by Default) */
-.sidebar-menu ul {
-  display: none !important;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  padding: 15px 0;
-  opacity: 1 !important;
-  transform: translateX(-10px);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-/* Sidebar Expanded - Show Menu */
-.sidebar-menu.open ul {
+  top: 20px;
+  right: 20px;
+  width: 50px; /* Slightly larger for better visibility */
+  height: 50px;
+  z-index: 3000;
+  background: rgba(15, 15, 30, 0.6); /* Semi-transparent dark background */
+  border-radius: 10px;
+  backdrop-filter: blur(8px); /* Glass effect */
   display: flex;
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Sidebar Menu Items */
-.sidebar-menu li {
-  background: rgba(30, 30, 60, 0.9);
-  color: #ffffff !important;
-  font-size: 1rem;
-  padding: 14px;
-  margin-bottom: 8px;
-  cursor: pointer;
-  width: 90%;
-  text-align: center;
-  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 0px 8px rgba(0, 255, 255, 0.3);
-  border: 2px solid rgba(0, 255, 255, 0.4);
+  box-shadow: 
+    0 0 10px rgba(0, 230, 255, 0.8), 
+    0 0 25px rgba(0, 230, 255, 0.6), 
+    0 0 40px rgba(0, 0, 0, 0.9); /* ✅ Adds a black glow for contrast */
 }
 
-/* Hover Effect */
-.sidebar-menu li:hover {
-  background: rgba(0, 255, 255, 0.3);
-  box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.8);
-  transform: scale(1.05);
+.neon-menu-icon {
+  filter: drop-shadow(0 0 10px rgba(0, 230, 255, 0.8));
+  transition: all 0.3s ease-in-out;
 }
 
-/* Profile Section */
+
+
+/* 🔥 Animate Glow Effect */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 10px rgba(0, 230, 255, 0.9),
+      0 0 20px rgba(0, 230, 255, 0.7),
+      0 0 30px rgba(0, 230, 255, 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 0 15px rgba(0, 255, 255, 1),
+      0 0 25px rgba(0, 255, 255, 0.8),
+      0 0 35px rgba(0, 255, 255, 0.6);
+  }
+}
+
+/* 🔥 Apply Neon Pulse Effect */
+.bm-burger-button {
+  animation: neonPulse 2.5s infinite ease-in-out;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+}
+/* ✅ Restore Burger Menu Bars */
+.bm-burger-bars {
+  background: #00e6ff !important;
+  height: 4px !important;
+  width: 100% !important;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 
+    0 0 10px rgba(0, 230, 255, 0.9), 
+    0 0 20px rgba(0, 230, 255, 0.7), 
+    0 0 30px rgba(0, 230, 255, 0.5);
+}
+
+.bm-burger-button:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 1), 
+    0 0 35px rgba(0, 255, 255, 0.9);
+}
+
+/* ✅ Properly Hide the Burger Button When Sidebar is Open */
+.menu-open .bm-burger-button {
+  display: none !important;
+}
+/* ✅ Remove Background from Default Close Button */
+#react-burger-cross-btn {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  top: 15px !important;
+  right: 15px !important;
+}
+/* ❌ Hide Default React-Burger-Menu Text */
+.bm-item-list a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Completely Hide Default React-Burger-Menu Close Button */
+/* ✅ Hide Default Close Button */
+#react-burger-cross-btn {
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+
+.custom-close-icon {
+  background: none !important;
+  border: none !important;
+  width: 32px;
+  height: 32px;
+  padding: 5px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 4000 !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(0 0 10px rgba(0, 230, 255, 0.8))
+          drop-shadow(0 0 20px rgba(0, 230, 255, 0.6))
+          drop-shadow(0 0 30px rgba(0, 0, 0, 0.8)); /* ✅ Black Shadow */
+}
+/* 🔥 Hover Effect - Enhance the Glow */
+.custom-close-icon:hover {
+  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 1))
+          drop-shadow(0 0 25px rgba(0, 255, 255, 0.9))
+          drop-shadow(0 0 35px rgba(0, 0, 0, 1)); /* ✅ Darker Black Shadow */
+  transform: scale(1.1);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+  left: 20px;
+  top: 50%;
+  justify-content: flex-start;
+  transform: translateY(-50%);
+  width: 240px;
+  max-width: 240px;
+  background: rgba(15, 15, 30, 0.85);
+  padding: 25px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* 🚀 Burger Menu Button */
+.sidebar-toggle-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 2001; /* ✅ Ensures it's always clickable */
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 24px;
+  padding: 0;
+}
+
+.sidebar-toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background: #00e6ff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(0, 230, 255, 0.7);
+}
+
+/* 🍔 Animate into X when open */
+.sidebar-toggle-button.open .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.sidebar-toggle-button.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.sidebar-toggle-button.open .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* 🔹 Profile Picture - Cyber Glow Effect */
 .profile-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 15px;
-  transition: all 0.3s ease-in-out;
+  margin-bottom: 20px;
 }
 
 .profile-pic {
-  width: 80px;
-  height: 80px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #00e6ff;
-  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.6);
+  border: 4px solid #00e6ff; /* Neon cyan glow */
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.6);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* 🔹 Profile Picture Hover Effect */
 .profile-pic:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.8);
+}
+
+/* 🔹 Sidebar Menu Items */
+.sidebar-menu ul {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  width: 90%;
+  background: rgba(30, 30, 60, 0.85);
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🔹 Cyberpunk Gradient Hover Effect */
+.sidebar-menu li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(45deg, #ff00ff, #00e6ff, #ff00ff);
+  transition: all 0.4s ease-in-out;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+/* 🔹 Button Hover - Futuristic Glow */
+.sidebar-menu li:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.3;
+}
+
+.sidebar-menu li:hover {
+  background: rgba(0, 255, 255, 0.2);
   box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+/* 🔹 Sidebar Soft Glow Effect */
+.sidebar-menu:hover {
+  box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.5);
+}
+
+/* 📱 Mobile Optimizations */
+@media (max-width: 767px) {
+  .sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+    background: rgba(15, 15, 30, 0.95);
+    border-radius: 0;
+    padding: 15px 10px;
+    box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  /* 🚀 Sidebar Slides in When Open */
+  .sidebar-menu.open {
+    transform: translateX(0);
+  }
+
+  /* 🏆 Hide Menu by Default */
+  .menu-items {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* 🏆 Show Menu When Open */
+  .sidebar-menu.open .menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .profile-section {
+    margin-bottom: 10px;
+  }
+
+  .profile-pic {
+    width: 90px;
+    height: 90px;
+  }
+
+  .menu-items li {
+    flex: 1 1 40%;
+    min-width: 120px;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
 }
 
 /* 📱 Responsive Adjustments */
@@ -151,37 +371,23 @@
 
 /* 🖥 1024px+ (Desktops) */
 @media (min-width: 1024px) {
-  .sidebar {
-    width: 220px !important; /* Expands for desktop */
-  }
 
   .sidebar-menu {
     position: fixed;
-    left: 10px;
     top: 50%;
-    width: 220px !important;
+    left: 20px;
     transform: translateY(-50%);
-    background: rgba(15, 15, 30, 0.9);
+    width: 240px;
+    background: rgba(15, 15, 30, 0.85);
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
     text-align: center;
-    backdrop-filter: blur(8px);
-    z-index: 2000 !important;
+    z-index: 1000;
   }
 
-  .sidebar-toggle {
-    display: none; /* Hide toggle button */
-  }
-
-  .profile-pic {
-    width: 100px;
-    height: 100px;
-  }
-
-  .sidebar-menu ul {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
+  .sidebar-toggle-button {
+    display: none;
   }
 }
