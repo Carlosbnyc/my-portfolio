@@ -68,6 +68,7 @@ const SidebarMenu: React.FC<SideBarProps> = ({ isOpen, setIsOpen }) => {
       <IoClose size={35} color="#00e6ff" className="custom-close-icon" />
     </button>
   }
+  
 >
         <div className="profile-section">
           <img
