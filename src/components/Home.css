@@ -5,100 +5,109 @@ body, html {
   overflow-x: hidden;
   background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
   background-attachment: fixed;
-  color: #ffffff;
+  color: #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* 🌟 Mobile-First Layout */
+/* 🌟 Layout Container */
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 20px 1rem;  /* Reduced padding for better spacing */
+  padding: 40px 1rem;
   max-width: 100%;
   margin: 0 auto;
 }
 
-/* 🌟 Sections: Mobile Defaults */
-.content { 
-  display:flex;
+/* 🌟 Content Section Container */
+.content {
+  display: flex;
   flex-direction: column;
-  gap: 15px; /* Reduced gap for better spacing */
-  width: 90%;
-  max-width: 100%; /* Prevents stretching */
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
   margin: auto;
-  padding-top: 80px;  /* Adjusted to avoid excessive space */
+  padding-top: 60px;
 }
 
+/* 🔹 Section Card Styling */
 section {
-  display: block;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0px 8px 16px rgba(0, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.15);
   transition: all 0.3s ease-in-out;
-  margin: auto;
-  width: 100%;  /* Ensures it fits within content */
+  width: 100%;
 }
 
-/* 🔹 Section Hover Effect */
+/* 🔹 Hover Effect */
 section:hover {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.25);
-  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 25px rgba(0, 255, 255, 0.3);
+  transform: scale(1.01);
 }
 
 /* 🔹 Headings */
 h2 {
-  color: #092d3b;
-  font-size: 2.5rem;
-  font-weight: 900;
+  color: #00e6ff;
+  font-size: 2rem;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 1px;
   text-align: center;
-  margin-bottom: 20px;
-  text-shadow: 0px 0px 10px rgba(84, 174, 174, 0.8); /* Neon glow effect */
+  margin-bottom: 25px;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
 }
 
-/* 📱 Tablet Screens (Min: 600px) */
+/* 🔹 Paragraph Text */
+p {
+  font-size: 1rem;
+  color: #d0d0d0;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+/* 📱 Mobile */
 @media (max-width: 768px) {
   .home-container {
-    padding: 50px 20px;
-    max-width: 600px;
-}
-  .content {
-    display: flex;
-    flex-direction: column;
-  }
-  section {
-    margin-bottom: 15px; /* Smaller spacing for mobile */
+    padding: 40px 16px;
   }
 
-}
-
-/* 🖥️ Desktop Screens (Min: 1024px) */
-@media (min-width: 1024px) {
-  .home-container {
-      padding: 50px 20px;
-      max-width: 1200px;
-  }
   .content {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 20px;
-    align-items: start;
-}
+    padding-top: 40px;
+  }
 
   section {
-      display:table-row;
-      width: 100%;
-      padding: 30px;
-      border-radius: 20 px;
-      box-shadow: 0px 12px 24px rgba(255, 255, 255, 0.2);
+    padding: 25px 20px;
   }
 
   h2 {
-      font-size: clamp(1.5rem, 2vw, 2rem);
-  } 
+    font-size: 1.8rem;
+  }
+}
+
+/* 🖥️ Desktop */
+@media (min-width: 1024px) {
+  .home-container {
+    padding: 60px 40px;
+  }
+
+  .content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  section {
+    flex: 1 1 48%;
+    min-width: 400px;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+  }
 }
