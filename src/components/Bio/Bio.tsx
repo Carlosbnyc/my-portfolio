@@ -10,6 +10,15 @@ const Bio: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
+        <h1 className="hero-title">
+        Hi, I’m <span className="highlighted">Carlos</span>.
+      </h1>
+      <h2 className="hero-subtitle">
+        Software Engineer & Fintech Innovator
+      </h2>
+      <p className="hero-tagline">
+        Building cutting-edge solutions that bridge finance and technology.
+      </p>
       <h2>About Me</h2>
       <h3>
         <strong>Software Engineer & Fintech Innovator</strong>
