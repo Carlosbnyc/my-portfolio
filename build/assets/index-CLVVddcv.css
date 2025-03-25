@@ -1117,7 +1117,7 @@ section {
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 40px 30px;
-  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.15);
+  box-shadow: 0 8px 20px rgba(243, 243, 243, 0.031);
   transition: all 0.3s ease-in-out;
   width: 100%;
 }
