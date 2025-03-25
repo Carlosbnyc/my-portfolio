@@ -34,7 +34,7 @@ body, html {
 
 /* 🔹 Section Card Styling */
 section {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(242, 239, 239, 0.997);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 40px 30px;

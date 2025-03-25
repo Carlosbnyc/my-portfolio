@@ -1,4 +1,4 @@
-/* Content Container (inherits layout from Home.css section) */
+
 .bio-inner {
   background: rgba(255, 255, 255, 0.12);   /* Match skills */
   backdrop-filter: blur(10px);

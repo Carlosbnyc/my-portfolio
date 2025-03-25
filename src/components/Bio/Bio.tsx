@@ -15,7 +15,7 @@ const Bio: React.FC = () => {
       </h1>
       <h2 className="hero-subtitle">Software Engineer & Fintech Innovator</h2>
       <p className="hero-tagline">
-        Building cutting-edge solutions that bridge finance and technology.
+        "Building cutting-edge solutions that bridge finance and technology."
       </p>
 
       <h2 className="about-heading">About Me</h2>
