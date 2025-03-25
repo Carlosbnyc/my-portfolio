@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
   ],
   build: {
-    outDir:"build",  // Ensure this matches firebase.json
+    outDir:"build",
+    minify: false,  // Ensure this matches firebase.json
   }
 })
