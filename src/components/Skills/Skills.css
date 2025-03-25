@@ -1,6 +1,5 @@
 /* Skills Section - Mobile-First Approach */
 .skills-section {
-  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
@@ -21,11 +20,10 @@ h3 {
 
 /* 🔹 Mobile-First Skills Grid (Single Column Default) */
 .skills-grid {
-  display: grid;
-  grid-template-columns: 1fr; /* Default to single-column on mobile */
+  display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   width: 90%;
-  max-width: 500px;
   margin: auto;
 }
 
