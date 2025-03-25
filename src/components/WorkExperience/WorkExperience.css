@@ -63,9 +63,14 @@ ul {
   padding-left: 15px;
 }
 
+h4 {
+  color:#0d0606;
+}
+
 li {
   font-size: 0.95rem; /* Adjust font size */
-  color: #ffffff;
+  color: #0d0606;
+  list-style: none;
 }
 
 /* 🔹 Desktop Enhancements */
