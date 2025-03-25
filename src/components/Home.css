@@ -45,7 +45,7 @@ section {
 
 /* 🔹 Hover Effect */
 section:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(239, 234, 234, 0.974);
   box-shadow: 0 12px 25px rgba(0, 255, 255, 0.3);
   transform: scale(1.01);
 }

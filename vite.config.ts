@@ -9,6 +9,6 @@ export default defineConfig({
   ],
   build: {
     outDir:"build",
-    minify: false,  // Ensure this matches firebase.json
+    minify: false, 
   }
 })
